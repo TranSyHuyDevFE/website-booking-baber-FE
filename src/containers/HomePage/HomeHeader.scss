@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,900&display=swap");
+.home-header-container {
+  font-family: "Fraunces", serif;
+  background-color: black;
+  .nav-item a {
+    color: aliceblue;
+    font-weight: bolder;
+    margin-left: 30px;
+    font-size: 1.4rem;
+    transition: 0.75s;
+    &:hover {
+      color: #ff0000;
+    }
+  }
+  .number-phone {
+    color: white;
+  }
+  .navbar-toggler {
+    background-color: whitesmoke;
+  }
+  .header-logo {
+    background: url("../../assets/images/logobaber.jpeg") no-repeat;
+    width: 50%;
+    height: 60px;
+    background-size: contain;
+    cursor: pointer;
+    h3 {
+      color: azure;
+      position: absolute;
+      left: 100px;
+      top: 30px;
+      font-size: 15px;
+      transition: 0.75s;
+      i {
+        margin: 5px;
+      }
+      &:hover {
+        color: #ff0000;
+      }
+    }
+  }
+}
+@media screen and (max-width: 85rem) {
+  .home-header-container {
+    font-family: "Fraunces", serif;
+    background-color: black;
+    .nav-item a {
+      color: aliceblue;
+      font-weight: bolder;
+      margin-left: 30px;
+      font-size: 10px;
+      transition: 0.75s;
+      width: 90px;
+      &:hover {
+        color: #ff0000;
+      }
+    }
+    .number-phone {
+      color: white;
+    }
+    .navbar-toggler {
+      background-color: whitesmoke;
+    }
+    .header-logo {
+      background: url("../../assets/images/logobaber.jpeg") no-repeat;
+      width: 50%;
+      height: 60px;
+      background-size: contain;
+      cursor: pointer;
+      h3 {
+        color: azure;
+        position: absolute;
+        left: 100px;
+        top: 30px;
+        font-size: 10px;
+        transition: 0.75s;
+        &:hover {
+          color: #ff0000;
+        }
+      }
+    }
+  }
+}
+.home-header-banner {
+  background: url(../../assets/images/background.jpeg) center center no-repeat;
+  background-size: cover;
+  height: 790px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Fraunces", serif;
+  .content-up {
+    height: 50%;
+    padding-top: 15rem;
+
+    .title1 {
+      text-align: center;
+      font-size: 40px;
+      text-shadow: 1px 1px 1px #333;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      color: white;
+    }
+    .title2 {
+      text-align: center;
+      font-size: 40px;
+      text-shadow: 1px 1px 1px #333;
+      margin-bottom: 20px;
+      color: white;
+      button {
+        background-color: #333;
+        color: white;
+        font-size: 25px;
+        border-radius: 10px;
+        padding: 10px;
+        transition: 1s;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.694);
+          color: black;
+        }
+      }
+    }
+  }
+  .content-down {
+    height: 50%;
+    display: flex;
+    padding-bottom: 15px;
+    align-items: flex-end;
+    justify-content: center;
+    background-image: linear-gradient(
+      rgb(255 255 255 / 0%),
+      rgb(255 255 255 / 38%),
+      rgb(11 11 11)
+    );
+    .options {
+      text-align: center;
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      font-weight: bold;
+      .option-child {
+        width: 100%;
+        width: 100px;
+        text-align: center;
+        .icon-child {
+          background-color: rgba(255, 255, 255, 0.62);
+          width: 40px;
+          height: 40px;
+          padding: 10px;
+          border-radius: 50%;
+          text-align: center;
+          margin: 0 auto;
+          i {
+            color: black;
+            font-size: 20px;
+          }
+        }
+        .text-child {
+          color: white;
+          font-size: 14px;
+          font-weight: inherit;
+          &:hover {
+            transition: 0.5s;
+            text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+          }
+        }
+      }
+    }
+  }
+  .review-page {
+    display: flex;
+    justify-content: center;
+    .row {
+      .review-item {
+        .review-item-child {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          height: 200px;
+          width: 200px;
+          gap: 10px;
+          background-color: rgba(0, 0, 0, 0.714);
+          color: white;
+          gap: 20px;
+          transition: 1s;
+          i {
+            font-size: 2rem;
+          }
+          &:hover {
+            background-color: rgba(51, 51, 51, 0.669);
+            border: 1px solid black;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 85rem) {
+  .home-header-banner {
+    background: url(../../assets/images/background.jpeg) center center no-repeat;
+    background-size: cover;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Fraunces", serif;
+    .content-up {
+      height: 50%;
+      padding-top: 10rem;
+
+      .title1 {
+        text-align: center;
+        font-size: 20px;
+        text-shadow: 1px 1px 1px #333;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        color: white;
+      }
+      .title2 {
+        text-align: center;
+        font-size: 20px;
+        text-shadow: 1px 1px 1px #333;
+        margin-bottom: 16px;
+        color: white;
+      }
+    }
+    .content-down {
+      height: 50%;
+      display: flex;
+      padding-bottom: 15px;
+      align-items: flex-end;
+      justify-content: center;
+      background-image: linear-gradient(
+        rgb(255 255 255 / 0%),
+        rgb(255 255 255 / 38%),
+        rgb(11 11 11)
+      );
+      .options {
+        text-align: center;
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        font-weight: bold;
+        .option-child {
+          width: 100%;
+          width: 100px;
+          text-align: center;
+          .icon-child {
+            background-color: rgba(255, 255, 255, 0.62);
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+            border-radius: 50%;
+            text-align: center;
+            margin: 0 auto;
+            i {
+              color: black;
+              font-size: 20px;
+            }
+          }
+          .text-child {
+            color: white;
+            font-size: 14px;
+            font-weight: inherit;
+            &:hover {
+              transition: 0.5s;
+              text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
+            }
+          }
+        }
+      }
+    }
+    .review-page {
+      .row {
+        .review-item {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          .review-item-child {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 120px;
+            width: 120px;
+            font-size: 10px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

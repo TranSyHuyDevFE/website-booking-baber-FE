@@ -1,0 +1,65 @@
+.barber-schedule-container {
+  border-right: 1px solid black;
+  height: 100%;
+  .all-schedule {
+    select {
+      border-bottom: 3px solid rgba(165, 42, 42, 0.837);
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      outline: none;
+      cursor: pointer;
+      padding: 10px 0;
+      color: black;
+      font-weight: 600;
+      option {
+        cursor: pointer;
+      }
+    }
+  }
+  .all-available-time {
+    .text-calendar {
+      color: black;
+      margin: 10px 0;
+      i {
+        margin-right: 5px;
+      }
+      span {
+        text-transform: uppercase;
+      }
+    }
+    .time-content {
+      .time-content-schedule {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        button {
+          padding: 8px 10px;
+          border: none;
+          outline: none;
+          background-color: gray;
+          min-width: 120px;
+          border-radius: 3px;
+          color: white;
+          font-weight: 600;
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.778);
+          }
+        }
+        .btn-vi {
+          min-width: 120px;
+        }
+        .btn-en {
+          min-width: 170px;
+        }
+        .no-schedule {
+          font-style: italic;
+          font-weight: 600;
+        }
+      }
+      .book-free {
+        padding-top: 10px;
+      }
+    }
+  }
+}

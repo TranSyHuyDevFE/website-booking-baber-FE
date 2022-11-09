@@ -1,0 +1,113 @@
+{
+  "home-header": {
+    "title1": "Các dịch vụ",
+    "title2": "Thợ cắt tóc",
+    "title3": "Chi nhánh",
+    "title4": "Dịch vụ",
+    "support": "Nhà tài trợ",
+    "welcome": "Xin chào!",
+    "language": "Ngôn ngữ",
+    "pr1": "5000+ Khách Hàng",
+    "pr2": "100+ Thợ và nhân viên",
+    "pr3": "Luôn hỗ trợ khách hàng",
+    "pr4": "1 triệu lượt thích"
+  },
+  "banner": {
+    "title1": "PHONG CÁCH MỚI",
+    "title2": "HỆ THỐNG ĐẶT LỊCH CẮT TÓC ONLINE SỐ 1 VIỆT NAM",
+    "option1": " Chuyên nghiệp",
+    "option2": " Giao tiếp vui vẻ",
+    "option3": "Giá cả hợp lí",
+    "option4": "Nhân viên chuẩn",
+    "option5": " Tư vấn nhiệt tình"
+  },
+
+  "menu": {
+    "admin": {
+      "manage-user": "Người dùng",
+      "manage-barber": "Quản lý Barber",
+      "manage-admin": "Quản lý admin",
+      "crud": "CRUD user",
+      "crud-redux": "Quản lí nguời dùng",
+      "branching": "Chi nhánh",
+      "manage-branching": "Quản lý chi nhánh",
+      "service": "Dịch vụ",
+      "manage-service": "Quản lý dịch vụ",
+      "handbook": "Bài đăng",
+      "manage-handbook": "Quản lý bài đăng"
+    },
+    "barber": {
+      "manage-schedule": "Quản lý kế hoạch của barber"
+    }
+  },
+  "manage-user": {
+    "add": "Thêm mới người dùng",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "first-name": "Tên",
+    "last-name": "Họ",
+    "phone-number": "Số điện thoại",
+    "address": "Địa chỉ",
+    "gender": "Giới tính",
+    "role": "Vai trò",
+    "position": "Chuyên gia",
+    "image": "Ảnh đại diện",
+    "save": "Lưu",
+    "edit": "Cập nhật"
+  },
+  "homepage": {
+    "outstanding-barber": "Chọn thợ và đặt lịch bạn muốn",
+    "more-info": "Xem thêm",
+    "serviceBarber": "Các dịch vụ",
+    "branching": "Chi nhánh"
+  },
+  "manage-schedule": {
+    "title": "Quản lý kế hoạch của barber",
+    "choose-barber": "Chọn tên barber",
+    "choose-date": "Chọn lịch làm việc",
+    "save": "Lưu thông tin"
+  },
+  "customer": {
+    "detail-barber": {
+      "schedule": "Lịch làm việc",
+      "no-schedule": "Thợ không làm việc, xin vui lòng chọn thời gian khác.",
+      "choose": "Chọn",
+      "book-free": "và đặt lịch miễn phí",
+      "text-address": "Địa chỉ làm việc",
+      "text-price": "Giá Tiền:",
+      "hide": "Ẩn",
+      "show": "Xem chi tiết",
+      "payment": "Hình thức thanh toán:"
+    },
+    "booking-modal": {
+      "title": "Thông tin đặt lịch khách hàng",
+      "price": "Giá tiền ",
+      "fullName": "Họ và tên",
+      "phoneNumber": "Số điện thoại",
+      "address": "Địa chỉ",
+      "note": "Ghi chú",
+      "birthday": "Ngày sinh",
+      "gender": "Giới tính",
+      "submit": "Xác nhận",
+      "cancel": "Hủy",
+      "free-booking": "Miễn phí đặt lịch"
+    }
+  },
+  "admin": {
+    "manage-barber": {
+      "title": "Tạo thêm thông tin Barber",
+      "select-barber": "Chọn barber",
+      "intro-barber": "Thông tin giới thiệu:",
+      "add": "Tạo thông tin",
+      "save": "Lưu thông tin",
+      "price": "Chọn giá",
+      "payment": "Phương thức thanh toán",
+      "province": "Tỉnh thành",
+      "nameBranch": "Tên chi nhánh",
+      "addressBranch": "Địa chỉ chi nhánh làm việc ",
+      "note": "Ghi chú",
+      "serviceBarber": "Chọn nghiệp vụ ưu tiên",
+      "selectedBranch": "Chọn chi nhánh làm việc"
+    }
+  }
+}

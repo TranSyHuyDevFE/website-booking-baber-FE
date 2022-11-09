@@ -1,0 +1,48 @@
+.manage-barber-container {
+  padding: 5px;
+  .manage-doctor-title {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .save-content-barber {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    background: orange;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .create-content-barber {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    color: white;
+    background: rgb(0, 72, 255);
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .more-info {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 15px;
+    .content-left {
+      width: 40%;
+    }
+    .content-right {
+      width: 60%;
+    }
+  }
+}

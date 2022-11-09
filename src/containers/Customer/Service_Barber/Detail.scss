@@ -1,0 +1,41 @@
+.detail-service-container {
+  .description-service {
+    border: 1px solid red;
+    height: 200px;
+  }
+  .detail-service-body {
+    margin: 0 200px;
+  }
+  .each-barber {
+    display: flex;
+    width: 100%;
+    min-height: 300px;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: rgb(235 235 235);
+    box-shadow: 0 3px 6px black;
+    box-shadow: 0 3px 6px black;
+    border-radius: 5px;
+    .mix-content-left {
+      width: 50%;
+      border-right: 2px solid rgba(13, 12, 12, 0.683);
+    }
+    .mix-content-right {
+      width: 50%;
+      padding: 10px;
+      .barber-schedule {
+        .barber-schedule-container {
+          border-right: unset;
+        }
+      }
+      .barber-extra-infor {
+        border-top: 1px solid #ddd;
+        margin-top: 10px;
+        padding-top: 10px;
+        .barber-extra-infor-container {
+          padding-left: 0 !important;
+        }
+      }
+    }
+  }
+}

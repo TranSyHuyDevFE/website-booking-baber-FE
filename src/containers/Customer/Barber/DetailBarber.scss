@@ -1,0 +1,59 @@
+.barber-detail-container {
+  height: 500px;
+
+  .intro-barber {
+    display: flex;
+    .content-left {
+      img {
+        background-size: cover;
+      }
+      width: 20%;
+      background: center center no-repeat;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      margin: 10px 20px;
+    }
+    .content-right {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+      .up {
+        padding-top: 5px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .down {
+        padding-top: 10px;
+      }
+    }
+  }
+  .schedule-barber {
+    display: flex;
+    min-height: 200px;
+    padding: 10px 0;
+    .content-left {
+      width: 50%;
+    }
+    .content-right {
+      width: 50%;
+    }
+  }
+  .detail-infor-barber {
+    border-top: 4px solid rgb(33, 31, 31);
+    border-bottom: 4px solid rgb(33, 31, 31);
+    padding: 35px;
+    background-color: rgba(128, 121, 121, 0.208);
+
+    h3 {
+      font-size: 17px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .comment-barber {
+    height: 50px;
+  }
+}

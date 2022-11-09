@@ -1,0 +1,30 @@
+.manage-service-container {
+  padding: 0 16px;
+  .ms-title {
+    text-align: center;
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .btn-add-new-service {
+  }
+  .add-new-service {
+  }
+  .preview-img-service {
+    .preview-image {
+      width: 40%;
+      height: 150px;
+      border: 1px solid rgba(0, 0, 0, 0.495);
+      background: center center no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+    .label-upload {
+      background: #c3b4b4;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-weight: 400;
+    }
+  }
+}

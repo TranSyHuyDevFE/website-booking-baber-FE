@@ -1,0 +1,113 @@
+{
+  "home-header": {
+    "title1": "Services",
+    "title2": "Barber",
+    "title3": "Branch",
+    "title4": "Service",
+    "support": "Support Us",
+    "welcome": "Welcome!",
+    "language": "Language",
+    "pr1": "5000+ Customers",
+    "pr2": "100+ Barbers and employees",
+    "pr3": "Always support customers",
+    "pr4": "1 million likes"
+  },
+  "banner": {
+    "title1": "NEW STYLE",
+    "title2": "VIETNAM's NO.1 ONLINE HAIR BOOKING SYSTEM",
+    "option1": "Professionally",
+    "option2": "Happy communication",
+    "option3": "Reasonable price",
+    "option4": "Standard staff",
+    "option5": "Enthusiastic advice"
+  },
+
+  "menu": {
+    "admin": {
+      "manage-user": "Users System",
+      "manage-barber": "Manage Barber",
+      "manage-admin": "Manage admin",
+      "crud": "CRUD user",
+      "crud-redux": "Manage Users",
+      "branching": "Branchings",
+      "manage-branching": "Manage Branchings",
+      "service": "Service",
+      "manage-service": "Manage Service",
+      "handbook": "Handbooks",
+      "manage-handbook": "Manage Handbook"
+    },
+    "barber": {
+      "manage-schedule": "Mange Baber's schedule"
+    }
+  },
+  "manage-user": {
+    "add": "Create New User",
+    "email": "Email",
+    "password": "Password",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "phone-number": "Phone Number",
+    "address": "Address",
+    "gender": "Gender",
+    "role": "Role",
+    "position": "Position",
+    "image": "Avatar",
+    "save": "Save",
+    "edit": "Update"
+  },
+  "homepage": {
+    "outstanding-barber": "Choose barber and book the schedule",
+    "more-info": "More",
+    "serviceBarber": "Services",
+    "branching": "Branching"
+  },
+  "manage-schedule": {
+    "title": "Barber's plan manager",
+    "choose-barber": "Choose Barber",
+    "choose-date": "Choose day work",
+    "save": "Save information"
+  },
+  "customer": {
+    "detail-barber": {
+      "schedule": "Schedule",
+      "no-schedule": "Barber is not working, please choose another time.",
+      "choose": "Choose",
+      "book-free": "and book free",
+      "text-address": "Address Us",
+      "text-price": "Price:",
+      "hide": "Hide",
+      "show": "See more",
+      "payment": "Payments:"
+    },
+    "booking-modal": {
+      "title": "Customer booking information",
+      "price": "Price ",
+      "fullName": "Full Name",
+      "phoneNumber": "Phone",
+      "address": "Address",
+      "note": "Note",
+      "birthday": "Birthday",
+      "gender": "Sex",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "free-booking": "Free Booking"
+    }
+  },
+  "admin": {
+    "manage-barber": {
+      "title": "Create a information barber",
+      "select-barber": "Select barber",
+      "intro-barber": "Information Introduce:",
+      "add": "Create Information",
+      "save": "Save Information",
+      "price": "Choose price",
+      "payment": "Payment methods",
+      "province": "Province",
+      "nameBranch": "Branch name",
+      "addressBranch": "Address of working branch",
+      "note": "Note",
+      "serviceBarber": "Pick a favorite thing",
+      "selectedBranch": "Pick a branch working"
+    }
+  }
+}

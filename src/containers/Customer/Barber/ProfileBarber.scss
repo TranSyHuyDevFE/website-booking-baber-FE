@@ -1,0 +1,33 @@
+.profile-barber-container {
+  .intro-barber {
+    display: flex;
+    .content-left {
+      img {
+        background-size: cover;
+      }
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+    }
+    .content-right {
+      width: calc(100% - 80px);
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+      .up {
+        padding-top: 5px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .down {
+        justify-content: center;
+      }
+    }
+  }
+  .price {
+    margin: 15px 0;
+  }
+}

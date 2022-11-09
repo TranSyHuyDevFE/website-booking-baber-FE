@@ -1,0 +1,49 @@
+.barber-extra-infor-container {
+  padding-left: 15px;
+  .content-up {
+    margin-bottom: 15px;
+    .text-address {
+      text-transform: uppercase;
+      color: #333;
+    }
+    .name-branch {
+      padding: 5px 0;
+      font-weight: 600;
+      color: #333;
+    }
+    .detail-address {
+      font-weight: 600;
+      color: #333;
+    }
+  }
+  .content-down {
+    .title-price {
+    }
+    .detail-infor {
+      border: 2px solid #ddd;
+      padding: 5px;
+      background-color: rgba(203, 199, 199, 0.329);
+      .price {
+        margin-bottom: 10px;
+        .right {
+          float: right;
+        }
+      }
+      .note {
+      }
+    }
+    .payment {
+      border: 1px solid #ddd;
+      padding: 5px;
+      background-color: rgba(203, 199, 199, 0.643);
+    }
+    .hide-price {
+      margin-top: 10px;
+      span {
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+      }
+    }
+  }
+}
