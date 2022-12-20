@@ -5,7 +5,6 @@ import { push } from "connected-react-router";
 import * as actions from "../../store/actions";
 
 import "./Login.scss";
-import { FormattedMessage } from "react-intl";
 import { handleLoginApi } from "../../services/userService";
 import img2 from "../../assets/branching/shop_baber.jpeg";
 class Login extends Component {
