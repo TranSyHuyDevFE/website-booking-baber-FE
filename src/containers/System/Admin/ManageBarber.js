@@ -89,6 +89,14 @@ class ManageBarber extends Component {
           result.push(object);
         });
       }
+      if (type === "BRANCHING") {
+        inputData.map((item, index) => {
+          let object = {};
+          object.label = item.name;
+          object.value = item.id;
+          result.push(object);
+        });
+      }
     }
     return result;
   };
@@ -105,8 +113,13 @@ class ManageBarber extends Component {
     if (
       prevProps.allRequiredBarberInfor !== this.props.allRequiredBarberInfor
     ) {
-      let { resPayment, resPrice, resProvince, resServiceBarber } =
-        this.props.allRequiredBarberInfor;
+      let {
+        resPayment,
+        resPrice,
+        resProvince,
+        resServiceBarber,
+        resBranching,
+      } = this.props.allRequiredBarberInfor;
       let dataSelectPrice = this.buildDataInputSelect(resPrice, "PRICE");
       let dataSelectPayment = this.buildDataInputSelect(resPayment, "PAYMENT");
       let dataSelectProvince = this.buildDataInputSelect(
@@ -117,12 +130,16 @@ class ManageBarber extends Component {
         resServiceBarber,
         "SERVICE_BARBER"
       );
-
+      let dataSelectBranching = this.buildDataInputSelect(
+        resBranching,
+        "BRANCHING"
+      );
       this.setState({
         listPrice: dataSelectPrice,
         listPayment: dataSelectPayment,
         listProvince: dataSelectProvince,
         listServiceBarber: dataSelectServiceBarber,
+        listBranch: dataSelectBranching,
       });
     }
     if (prevProps.language !== this.props.language) {
@@ -130,19 +147,34 @@ class ManageBarber extends Component {
         this.props.allBarbers,
         `USERS`
       );
-      let { resPayment, resPrice, resProvince } =
-        this.props.allRequiredBarberInfor;
+      let {
+        resPayment,
+        resPrice,
+        resProvince,
+        resServiceBarber,
+        resBranching,
+      } = this.props.allRequiredBarberInfor;
       let dataSelectPrice = this.buildDataInputSelect(resPrice, "PRICE");
       let dataSelectPayment = this.buildDataInputSelect(resPayment, "PAYMENT");
       let dataSelectProvince = this.buildDataInputSelect(
         resProvince,
         "PROVINCE"
       );
+      let dataSelectServiceBarber = this.buildDataInputSelect(
+        resServiceBarber,
+        "SERVICE_BARBER"
+      );
+      let dataSelectBranching = this.buildDataInputSelect(
+        resBranching,
+        "BRANCHING"
+      );
       this.setState({
         listBarbers: dataSelect,
         listPrice: dataSelectPrice,
         listPayment: dataSelectPayment,
         listProvince: dataSelectProvince,
+        listServiceBarber: dataSelectServiceBarber,
+        listBranch: dataSelectBranching,
       });
     }
   }
@@ -161,24 +193,26 @@ class ManageBarber extends Component {
       description: this.state.description,
       barberId: this.state.selectedOption.value,
       action: hasOldData === true ? CRUD_ACTIONS.EDIT : CRUD_ACTIONS.CREATE,
-
       selectedPrice: this.state.selectedPrice.value,
       selectedPayment: this.state.selectedPayment.value,
       selectedProvince: this.state.selectedProvince.value,
+      selectedBranch: this.state.selectedBranch.value,
       nameBranch: this.state.nameBranch,
       addressBranch: this.state.addressBranch,
       note: this.state.note,
-      branchId:
-        this.state.selectedBranch && this.state.selectedBranch.value
-          ? this.state.selectedBranch.value
-          : "",
+      branchId: this.state.selectedBranch.value,
       serviceId: this.state.selectedService.value,
     });
   };
   handleChangeSelect = async (selectedOption) => {
     this.setState({ selectedOption });
-    let { listPayment, listPrice, listProvince, listServiceBarber } =
-      this.state;
+    let {
+      listPayment,
+      listPrice,
+      listProvince,
+      listServiceBarber,
+      listBranch,
+    } = this.state;
     let response = await getDetailInforBarber(selectedOption.value);
     if (
       response &&
@@ -194,10 +228,12 @@ class ManageBarber extends Component {
         priceId = "",
         provinceId = "",
         serviceId = "",
+        branchId = "",
         selectedPayment = "",
         selectedPrice = "",
         selectedProvince = "",
-        selectedService = "";
+        selectedService = "",
+        selectedBranch = "";
       if (response.data.Barber_Infor) {
         addressBranch = response.data.Barber_Infor.addressBranch;
         nameBranch = response.data.Barber_Infor.nameBranch;
@@ -206,6 +242,7 @@ class ManageBarber extends Component {
         priceId = response.data.Barber_Infor.priceId;
         provinceId = response.data.Barber_Infor.provinceId;
         serviceId = response.data.Barber_Infor.serviceId;
+        branchId = response.data.Barber_Infor.branchId;
         selectedPayment = listPayment.find((item) => {
           return item && item.value === paymentId;
         });
@@ -218,7 +255,9 @@ class ManageBarber extends Component {
         selectedService = listServiceBarber.find((item) => {
           return item && item.value === serviceId;
         });
-        // console.log("check find array:", findItem, listPayment, paymentId);
+        selectedBranch = listBranch.find((item) => {
+          return item && item.value === branchId;
+        });
       }
       this.setState({
         contentHTML: markdown.contentHTML,
@@ -232,6 +271,7 @@ class ManageBarber extends Component {
         selectedPrice: selectedPrice,
         selectedProvince: selectedProvince,
         selectedService: selectedService,
+        selectedBranch: selectedBranch,
       });
     } else {
       this.setState({
@@ -242,9 +282,13 @@ class ManageBarber extends Component {
         addressBranch: "",
         nameBranch: "",
         note: "",
+        selectedPrice: "",
+        selectedPayment: "",
+        selectedProvince: "",
+        selectedBranch: "",
+        selectedService: "",
       });
     }
-    // console.log("sy huy check option", response);
   };
   handleChangeSelectBarberInfor = async (selectedOption, name) => {
     let stateName = name.name;

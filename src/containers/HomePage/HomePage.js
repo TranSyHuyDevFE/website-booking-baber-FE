@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import OutStandingBarber from "./Section/OutStandingBarber";
 import LifeStyle from "./Section/LifeStyle";
 import Footer from "./Section/Footer";
+
 class HomePage extends Component {
   render() {
     var settings = {
@@ -91,6 +92,40 @@ class HomePage extends Component {
         {
           breakpoint: 1024,
           settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2,
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    };
+    var settingsLife = {
+      dots: true,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      initialSlide: 0,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
             infinite: true,
@@ -115,14 +150,14 @@ class HomePage extends Component {
       ],
     };
     return (
-      <div>
+      <>
         <HomeHeader isShowBanner={true} />
         <ServiceBarber settings={settingsServiceBarber} />
         <OutStandingBarber settings={settings} />
         <Branching settings={settingsBranch} />
-        {/* <LifeStyle settings={settings} /> */}
+        <LifeStyle settings={settingsLife} />
         <Footer />
-      </div>
+      </>
     );
   }
 }

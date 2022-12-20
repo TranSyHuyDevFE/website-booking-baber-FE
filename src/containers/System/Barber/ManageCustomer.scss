@@ -1,0 +1,44 @@
+div._loading_overlay_wrapper {
+  position: unset;
+  ._loading_overlay_overlay {
+    z-index: 1000000;
+  }
+}
+.manage-customer-container {
+  .m-p-title {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .manage-customer-body {
+    padding: 0 20px;
+    .thead-color {
+      background-color: rgba(158, 215, 43, 0.853);
+    }
+  }
+}
+@media screen and (max-width: 60rem) {
+  .manage-customer-container {
+    .m-p-title {
+      font-size: 10px;
+      font-weight: bold;
+      margin: 5px 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .manage-customer-body {
+      padding: 0 10px;
+      .thead-color {
+        background-color: rgba(158, 215, 43, 0.853);
+      }
+    }
+    table {
+      font-size: 5px;
+      button {
+        font-size: 5px;
+      }
+    }
+  }
+}

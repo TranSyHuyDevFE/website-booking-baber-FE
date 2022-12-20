@@ -31,7 +31,6 @@ class Header extends Component {
       if (role === USER_ROLES.BARBER) {
         menu = barberMenu;
       }
-      // console.log("check menu", menu);
     }
     this.setState({
       menuApp: menu,
@@ -39,9 +38,8 @@ class Header extends Component {
   }
   render() {
     const { processLogout, language, userInfo } = this.props;
-
     return (
-      <div className="header-container">
+      <div id="home" className="header-container">
         <div className="languages">
           <span className="welcome">
             <FormattedMessage id="home-header.welcome" />,{" "}

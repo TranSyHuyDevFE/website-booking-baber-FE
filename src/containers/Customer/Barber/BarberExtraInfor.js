@@ -41,7 +41,7 @@ class BarberExtraInfor extends Component {
   render() {
     let { isShowDetailInfor, extraInfor } = this.state;
     let { language } = this.props;
-    console.log(this.state);
+
     return (
       <div className="barber-extra-infor-container">
         <div className="content-up">

@@ -138,3 +138,12 @@
     }
   }
 }
+@media screen and (max-width: 60rem) {
+  .menu-group {
+    ul {
+      li {
+        font-size: 8px;
+      }
+    }
+  }
+}

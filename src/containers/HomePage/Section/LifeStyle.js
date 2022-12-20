@@ -2,43 +2,41 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 
+import specialtyImg from "../../../assets/branching/mautoc1.jpeg";
+import specialtyImg2 from "../../../assets/branching/mautoc2.jpeg";
+import specialtyImg3 from "../../../assets/branching/mautoc3.jpeg";
+import specialtyImg4 from "../../../assets/branching/mautoc4.jpeg";
 import Slider from "react-slick";
-import specialtyImg from "../../../assets/branching/shop_baber.jpeg";
-
 class LifeStyle extends Component {
   render() {
     return (
-      <div className="section-share section-branching">
+      <div className="section-share section-lifestyle">
         <div className="section-container">
           <div className="section-header">
-            <span className="title-section">Đời sống phong cách</span>
-            <button className="btn-section">Xem thêm</button>
+            <span className="title-section">Các mẫu tóc xu huớng</span>
+            <hr />
           </div>
           <div className="section-body">
             <Slider {...this.props.settings}>
-              <div className="img-customize section-lifestyle">
-                <img src={specialtyImg} alt="error" />
-                <div>Tạo kiểu chuyên nghiệp 1</div>
+              <div className="card">
+                <div className="card-top">
+                  <img src={specialtyImg} alt="err" />
+                </div>
               </div>
-              <div className="img-customize section-lifestyle">
-                <img src={specialtyImg} alt="error" />
-                <div>Tạo kiểu chuyên nghiệp 2</div>
+              <div className="card">
+                <div className="card-top">
+                  <img src={specialtyImg2} alt="err" />
+                </div>
               </div>
-              <div className="img-customize section-lifestyle">
-                <img src={specialtyImg} alt="error" />
-                <div>Tạo kiểu chuyên nghiệp 3</div>
+              <div className="card">
+                <div className="card-top">
+                  <img src={specialtyImg3} alt="err" />
+                </div>
               </div>
-              <div className="img-customize section-lifestyle">
-                <img src={specialtyImg} alt="error" />
-                <div>Tạo kiểu chuyên nghiệp 4</div>
-              </div>
-              <div className="img-customize section-lifestyle">
-                <img src={specialtyImg} alt="error" />
-                <div>Tạo kiểu chuyên nghiệp 5</div>
-              </div>
-              <div className="img-customize section-lifestyle">
-                <img src={specialtyImg} alt="error" />
-                <div>Tạo kiểu chuyên nghiệp 6</div>
+              <div className="card">
+                <div className="card-top">
+                  <img src={specialtyImg4} alt="err" />
+                </div>
               </div>
             </Slider>
           </div>

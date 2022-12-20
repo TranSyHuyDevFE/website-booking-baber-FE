@@ -42,9 +42,6 @@ class OutStandingBarber extends Component {
               <span className="title-section">
                 <FormattedMessage id="homepage.outstanding-barber" />
               </span>
-              <button className="btn-section">
-                <FormattedMessage id="homepage.more-info" />
-              </button>
               <hr />
             </div>
             <div className="section-body">
@@ -54,7 +51,7 @@ class OutStandingBarber extends Component {
                   arrBarber.map((item, index) => {
                     let imageBase64 = "";
                     if (item.image) {
-                      imageBase64 = new Buffer(item.image, "base64").toString(
+                      imageBase64 = Buffer.from(item.image, "base64").toString(
                         "binary"
                       );
                     }

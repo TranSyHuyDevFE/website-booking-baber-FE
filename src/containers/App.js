@@ -18,7 +18,7 @@ import DetailBarber from "./Customer/Barber/DetailBarber";
 import Barber from "../routes/Barber";
 import VerifyEmail from "./Customer/VerifyEmail";
 import DetailService_Barber from "./Customer/Service_Barber/DetailService_Barber";
-
+import DetailBranching from "./Customer/Branchingwork/DetailBranching";
 class App extends Component {
   handlePersistorState = () => {
     const { persistor } = this.props;
@@ -65,7 +65,10 @@ class App extends Component {
                     path={path.DETAIL_SERVICE_BARBER}
                     component={DetailService_Barber}
                   />
-
+                  <Route
+                    path={path.DETAIL_BRANCHING}
+                    component={DetailBranching}
+                  />
                   <Route
                     path={path.VERIFY_EMAIL_BOOKING}
                     component={VerifyEmail}
@@ -73,19 +76,6 @@ class App extends Component {
                 </Switch>
               </CustomScrollbars>
             </div>
-
-            {/* <ToastContainer
-              className="toast-container"
-              toastClassName="toast-item"
-              bodyClassName="toast-item-body"
-              autoClose={false}
-              hideProgressBar={true}
-              pauseOnHover={false}
-              pauseOnFocusLoss={true}
-              closeOnClick={false}
-              draggable={false}
-              closeButton={<CustomToastCloseButton />}
-            /> */}
             <ToastContainer
               position="top-right"
               autoClose={5000}

@@ -51,6 +51,14 @@ class UserManage extends Component {
       });
     }
   };
+  async componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.state.arrUsers !== prevState.arrUsers) {
+      let response = await getAllUsers("ALL");
+      this.setState({
+        arrUsers: response.users,
+      });
+    }
+  }
   createNewUser = async (data) => {
     try {
       let response = await createNewUserService(data);
@@ -73,12 +81,7 @@ class UserManage extends Component {
   handleDeleteUser = async (user) => {
     // console.log("click delete", user);
     try {
-      let response = await deleteUserService(user.id);
-      if (response) {
-        await this.getAllUsersFromReact();
-      } else {
-        alert(response.errMessage);
-      }
+      await deleteUserService(user.id);
     } catch (error) {
       console.log(error);
     }
@@ -105,12 +108,9 @@ class UserManage extends Component {
     } catch (error) {
       console.log(error);
     }
-
-    // console.log("check new from child", user);
   };
   render() {
     let arrUsers = this.state.arrUsers;
-    // console.log("check render", arrUsers);
     return (
       <div className="text-container">
         <ModalUser

@@ -28,6 +28,7 @@ class BookingModal extends Component {
       timeType: "",
       language: "",
       timeString: "",
+      price: "",
       isLoading: false,
     };
   }
@@ -121,43 +122,59 @@ class BookingModal extends Component {
     }
     return "";
   };
+  buildPrice = (extraInfor) => {
+    let { language } = this.props;
+    if (extraInfor && !_.isEmpty(extraInfor)) {
+      let price =
+        language === LANGUAGES.VI
+          ? `${extraInfor.priceTypeData.valueVi} `
+          : `${extraInfor.priceTypeData.valueEn}`;
+      return price;
+    }
+    return "";
+  };
   handleConfirmBooking = async () => {
     //validate input
     await setTimeout(() => this.setState({ isLoading: true }), 1000);
     let date = new Date(this.state.birthday).getTime();
     let timeString = this.buildTimeBooking(this.props.dataScheduleTimeModal);
     let barberName = this.buildBarberName(this.props.dataScheduleTimeModal);
+    let price = this.buildPrice(this.props.extraInfor);
+
     let res = await postCustomerBookAppointment({
       fullName: this.state.fullName,
       phoneNumber: this.state.phoneNumber,
       email: this.state.email,
       address: this.state.address,
       note: this.state.note,
-      birthday: this.state.birthday,
-      date: date,
+      birthday: date,
+      date: this.props.dataScheduleTimeModal.date,
       selectedGender: this.state.selectedGender.value,
       barberId: this.state.barberId,
       timeType: this.state.timeType,
       language: this.props.language,
       timeString: timeString,
       barberName: barberName,
+      price: price,
     });
     if (res && res.errCode === 0) {
-      toast.success("Booking a new appointment succeed!");
+      toast.success("Đặt lịch thành công!");
       this.props.closeBookingModal();
     } else {
       setTimeout(() => this.setState({ isLoading: false }), 3000);
-      toast.error("Booking a new appointment error!");
+      toast.error("Lỗi đặt lịch!");
     }
   };
   render() {
-    let { isOpenModal, closeBookingModal, dataScheduleTimeModal } = this.props;
+    let { isOpenModal, closeBookingModal, dataScheduleTimeModal, dataProfile } =
+      this.props;
+    console.log(dataProfile);
     let { isLoading } = this.state;
     let barberId = "";
     if (dataScheduleTimeModal && !_.isEmpty(dataScheduleTimeModal)) {
       barberId = dataScheduleTimeModal.barberId;
     }
-    console.log("check state inside", dataScheduleTimeModal);
+
     return (
       <Modal
         isOpen={isOpenModal}
@@ -175,6 +192,8 @@ class BookingModal extends Component {
               barberId={barberId}
               isShowDescriptionBarber={false}
               dataScheduleTimeModal={dataScheduleTimeModal}
+              isShowLinkDetail={false}
+              isShowPrice={true}
             />
           </div>
 

@@ -33,11 +33,13 @@
       "manage-branching": "Manage Branchings",
       "service": "Service",
       "manage-service": "Manage Service",
-      "handbook": "Handbooks",
-      "manage-handbook": "Manage Handbook"
+      "other": "Other"
     },
     "barber": {
-      "manage-schedule": "Mange Baber's schedule"
+      "manage-schedule": "Manage Barber's schedule",
+      "manage-customer": "List Customer Booking",
+      "manage-customer-history": "History Customer Booking",
+      "sleeping": "Hide screen"
     }
   },
   "manage-user": {

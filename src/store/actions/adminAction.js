@@ -9,6 +9,7 @@ import {
   getAllBarbers,
   saveDetailBarberService,
   getAllServiceBarber,
+  getAllBranching,
 } from "../../services/userService";
 import { toast } from "react-toastify";
 //code chuan redux :start, doing, end
@@ -91,7 +92,7 @@ export const createNewUser = (data) => {
       let res = await createNewUserService(data);
 
       if (res && res.errCode === 0) {
-        toast.success("Create a new user success!");
+        toast.success("Tạo người dùng mới thành công!");
         dispatch(saveUserSuccess());
         dispatch(fetchAllUserStart());
       } else {
@@ -142,12 +143,12 @@ export const deleteUser = (userId) => {
       if (res && res.errCode === 0) {
         dispatch(deleteUserFail());
       } else {
-        toast.success("Delete a user success!");
+        toast.success("Đã xóa người dùng!");
         dispatch(fetchAllUserStart());
         dispatch(deleteUserSuccess());
       }
     } catch (e) {
-      toast.error("Delete a user error!");
+      toast.error("Lỗi xóa người dùng!");
       dispatch(deleteUserFail());
       console.log("Delete a user error!", e);
     }
@@ -164,15 +165,15 @@ export const editUser = (data) => {
     try {
       let res = await editUserService(data);
       if (res && res.errCode === 0) {
-        toast.success("Update a user success!");
+        toast.success("Đã cập nhập người dùng thành công!");
         dispatch(fetchAllUserStart());
         dispatch(editUserSuccess());
       } else {
-        toast.error("Update a user fail!");
+        toast.error("Lỗi cập nhập người dùng!");
         dispatch(editUserFail());
       }
     } catch (e) {
-      toast.error("Update a user error!");
+      toast.error("Lỗi cập nhập người dùng!");
       dispatch(editUserFail());
       console.log("Update a user error!", e);
     }
@@ -234,18 +235,18 @@ export const saveDetailBarber = (data) => {
       let res = await saveDetailBarberService(data);
       console.log(data);
       if (res && res.errCode === 0) {
-        toast.success("Save a barber success!");
+        toast.success("Lưu thay đổi thành công!");
         dispatch({
           type: actionTypes.SAVE_DETAIL_BARBER_SUCCESS,
         });
       } else {
-        toast.error("Save a barber error!");
+        toast.error("Lỗi! Lưu thay đổi không thành công!");
         dispatch({
           type: actionTypes.SAVE_DETAIL_BARBER_FAIL,
         });
       }
     } catch (e) {
-      toast.error("Save a barber error!");
+      toast.error("Lỗi! Lưu thay đổi không thành công!");
       console.log("Fail", e);
       dispatch({
         type: actionTypes.SAVE_DETAIL_BARBER_FAIL,
@@ -286,6 +287,7 @@ export const getRequiredBarberInfor = () => {
       let resPayment = await getAllCodeService("PAYMENT");
       let resProvince = await getAllCodeService("PROVINCE");
       let resServiceBarber = await getAllServiceBarber();
+      let resBranching = await getAllBranching();
       if (
         resPrice &&
         resPrice.errCode === 0 &&
@@ -294,13 +296,16 @@ export const getRequiredBarberInfor = () => {
         resProvince &&
         resProvince.errCode === 0 &&
         resServiceBarber &&
-        resServiceBarber.errCode === 0
+        resServiceBarber.errCode === 0 &&
+        resBranching &&
+        resBranching.errCode === 0
       ) {
         let data = {
           resPrice: resPrice.data,
           resPayment: resPayment.data,
           resProvince: resProvince.data,
           resServiceBarber: resServiceBarber.data,
+          resBranching: resBranching.data,
         };
         dispatch(fetchRequiredBarberInforSuccess(data));
       } else {
@@ -308,7 +313,7 @@ export const getRequiredBarberInfor = () => {
       }
     } catch (e) {
       dispatch(fetchRequiredBarberInforFail());
-      console.log("fetchBarberInfor error", e);
+      console.log("fetch Barber Infor error", e);
     }
   };
 };

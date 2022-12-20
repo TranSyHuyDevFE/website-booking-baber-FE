@@ -8,6 +8,8 @@ import NumberFormat from "react-number-format";
 import _ from "lodash";
 import localization from "moment/locale/vi";
 import moment from "moment";
+
+import { Link } from "react-router-dom";
 class ProfileBarber extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,10 @@ class ProfileBarber extends Component {
   };
   async componentDidUpdate(prevProps, prevState, snapshot) {
     if (this.props.barberId !== prevProps.barberId) {
-      //   this.getInforBarber(this.props.barberId);
+      let data = await this.getInforBarber(this.props.barberId);
+      this.setState({
+        dataProfile: data,
+      });
     }
   }
   renderTimeBooking = (dataScheduleTimeModal) => {
@@ -70,8 +75,14 @@ class ProfileBarber extends Component {
   };
   render() {
     let { dataProfile } = this.state;
-    let { language, isShowDescriptionBarber, dataScheduleTimeModal } =
-      this.props;
+    let {
+      language,
+      isShowDescriptionBarber,
+      dataScheduleTimeModal,
+      isShowPrice,
+      isShowLinkDetail,
+      barberId,
+    } = this.props;
     let nameVi = "";
     let nameEn = "";
     if (dataProfile && dataProfile.positionData) {
@@ -110,29 +121,38 @@ class ProfileBarber extends Component {
             </div>
           </div>
         </div>
-        <div className="price">
-          <FormattedMessage id="customer.booking-modal.price" />:
-          {dataProfile.Barber_Infor && language === LANGUAGES.VI ? (
-            <NumberFormat
-              value={dataProfile.Barber_Infor.priceTypeData.valueVi}
-              suffix={`VND`}
-              thousandSeparator={true}
-              displayType={"text"}
-            />
-          ) : (
-            ""
-          )}
-          {dataProfile.Barber_Infor && language === LANGUAGES.EN ? (
-            <NumberFormat
-              value={dataProfile.Barber_Infor.priceTypeData.valueEn}
-              suffix={`$`}
-              thousandSeparator={true}
-              displayType={"text"}
-            />
-          ) : (
-            ""
-          )}
-        </div>
+        {isShowLinkDetail === true && (
+          <div className="view-detail-barber">
+            <Link to={`/detail-barber/${barberId}`} activeClassName="active">
+              Xem Thêm
+            </Link>
+          </div>
+        )}
+        {isShowPrice === true && (
+          <div className="price">
+            <FormattedMessage id="customer.booking-modal.price" />:
+            {dataProfile.Barber_Infor && language === LANGUAGES.VI ? (
+              <NumberFormat
+                value={dataProfile.Barber_Infor.priceTypeData.valueVi}
+                suffix={`VND`}
+                thousandSeparator={true}
+                displayType={"text"}
+              />
+            ) : (
+              ""
+            )}
+            {dataProfile.Barber_Infor && language === LANGUAGES.EN ? (
+              <NumberFormat
+                value={dataProfile.Barber_Infor.priceTypeData.valueEn}
+                suffix={`$`}
+                thousandSeparator={true}
+                displayType={"text"}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+        )}
       </div>
     );
   }

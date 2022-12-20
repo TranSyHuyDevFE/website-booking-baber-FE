@@ -33,11 +33,13 @@
       "manage-branching": "Quản lý chi nhánh",
       "service": "Dịch vụ",
       "manage-service": "Quản lý dịch vụ",
-      "handbook": "Bài đăng",
-      "manage-handbook": "Quản lý bài đăng"
+      "other": "Khác"
     },
     "barber": {
-      "manage-schedule": "Quản lý kế hoạch của barber"
+      "manage-schedule": "Quản lý kế hoạch của barber",
+      "manage-customer": "Khách hàng đặt lịch ",
+      "manage-customer-history": "Lịch sử khách hàng",
+      "sleeping": "Tắt màn hình"
     }
   },
   "manage-user": {
@@ -106,7 +108,7 @@
       "nameBranch": "Tên chi nhánh",
       "addressBranch": "Địa chỉ chi nhánh làm việc ",
       "note": "Ghi chú",
-      "serviceBarber": "Chọn nghiệp vụ ưu tiên",
+      "serviceBarber": "Chọn nghiệp vụ",
       "selectedBranch": "Chọn chi nhánh làm việc"
     }
   }

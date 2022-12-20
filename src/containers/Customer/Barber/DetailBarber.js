@@ -45,30 +45,29 @@ class DetailBarber extends Component {
       nameEn = `${detailBarber.positionData.valueEn} - ${detailBarber.firstName} ${detailBarber.lastName}`;
     }
     return (
-      <>
+      <div className="container-barber">
         <HomeHeader isShowBanner={false} />
-        <div className="container barber-detail-container">
-          <div className="intro-barber">
-            <div
-              className="content-left"
-              style={{
-                backgroundImage: `url(${
-                  detailBarber && detailBarber.image ? detailBarber.image : ""
-                })`,
-                backgroundSize: "cover",
-              }}
-            ></div>
-            <div className="content-right">
-              <div className="up">
-                {language === LANGUAGES.VI ? nameVi : nameEn}
-              </div>
-              <div className="down">
+        <div className="container">
+          <div className="barber-container-detail">
+            <div className="content-barber-left">
+              <h1>{language === LANGUAGES.VI ? nameVi : nameEn}</h1>
+              <span>
+                {" "}
                 {detailBarber &&
                   detailBarber.Markdown &&
                   detailBarber.Markdown.description && (
                     <span>{detailBarber.Markdown.description}</span>
                   )}
+              </span>
+              <div className="btn-booking">
+                <button>
+                  Đặt lịch ngay dưới đây
+                  <i className="fa-regular fa-hand-point-down"></i>
+                </button>
               </div>
+            </div>
+            <div className="barber-image">
+              <img src={detailBarber.image} alt="error" />
             </div>
           </div>
           <div className="schedule-barber">
@@ -93,10 +92,9 @@ class DetailBarber extends Component {
                 ></div>
               )}
           </div>
-          <div className="comment-barber"></div>
           <Footer />
         </div>
-      </>
+      </div>
     );
   }
 }

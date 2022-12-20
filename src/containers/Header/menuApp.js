@@ -3,10 +3,10 @@ export const adminMenu = [
   {
     name: "menu.admin.manage-user",
     menus: [
-      {
-        name: "menu.admin.crud",
-        link: "/system/user-manage",
-      },
+      // {
+      //   name: "menu.admin.crud",
+      //   link: "/system/user-manage",
+      // },
       {
         name: "menu.admin.crud-redux",
         link: "/system/user-redux",
@@ -32,7 +32,7 @@ export const adminMenu = [
       },
     ],
   },
-  //quản lí chuyên môn
+  //quản lí dịch vụ
   {
     name: "menu.admin.service",
     menus: [
@@ -42,25 +42,40 @@ export const adminMenu = [
       },
     ],
   },
-  // //quản lí bài đăng
-  // {
-  //   name: "menu.admin.handbook",
-  //   menus: [
-  //     {
-  //       name: "menu.admin.manage-handbook",
-  //       link: "/system/manage-handbook",
-  //     },
-  //   ],
-  // },
+  {
+    //chuyển sang trạng thái tắt
+    name: "menu.admin.other",
+    menus: [
+      {
+        name: "menu.barber.sleeping",
+        link: "/system/home-manage",
+      },
+    ],
+  },
 ];
 export const barberMenu = [
   {
     name: "menu.admin.manage-user",
     menus: [
       {
-        //quản lí kế hoạch barber
-        name: "menu.barber.manage-schedule",
-        link: "/barber/manage-schedule",
+        //quản lí khách hàng đặt lịch của mình
+        name: "menu.barber.manage-customer",
+        link: "/barber/manage-customer",
+      },
+      {
+        //quản lí lịch sử khách hàng
+        name: "menu.barber.manage-customer-history",
+        link: "/barber/manage-customer-history",
+      },
+    ],
+  },
+  {
+    //chuyển sang trạng thái tắt
+    name: "menu.admin.other",
+    menus: [
+      {
+        name: "menu.barber.sleeping",
+        link: "/system/home-manage",
       },
     ],
   },

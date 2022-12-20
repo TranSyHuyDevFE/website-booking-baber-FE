@@ -2,12 +2,15 @@
 .home-header-container {
   font-family: "Fraunces", serif;
   background-color: black;
+  position: fixed;
+  z-index: 1;
   .nav-item a {
     color: aliceblue;
     font-weight: bolder;
     margin-left: 30px;
     font-size: 1.4rem;
     transition: 0.75s;
+    cursor: pointer;
     &:hover {
       color: #ff0000;
     }

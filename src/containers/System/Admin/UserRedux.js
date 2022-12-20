@@ -168,12 +168,12 @@ class UserRedux extends Component {
   handleEditUserFromParent = (user) => {
     let imageBase64 = "";
     if (user.image) {
-      imageBase64 = new Buffer(user.image, "base64").toString("binary");
+      imageBase64 = Buffer.from(user.image, "base64").toString("binary");
     }
     this.setState(
       {
         email: user.email,
-        password: "Hard code password",
+        password: user.password,
         firstName: user.firstName,
         lastName: user.lastName,
         phoneNumber: user.phonenumber,
@@ -247,9 +247,9 @@ class UserRedux extends Component {
                   onChange={(e) => {
                     this.onChangeInput(e, "password");
                   }}
-                  disabled={
-                    this.state.action === CRUD_ACTIONS.EDIT ? true : false
-                  }
+                  // disabled={
+                  //   this.state.action === CRUD_ACTIONS.EDIT ? true : false
+                  // }
                 />
               </div>
               <div className="form-group col-md-6">

@@ -67,7 +67,7 @@ class HomeHeader extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink>
+                  <NavLink href="#section-service">
                     <FormattedMessage id="home-header.title1" />
                   </NavLink>
                 </NavItem>
@@ -114,7 +114,7 @@ class HomeHeader extends Component {
         </div>
 
         {this.props.isShowBanner === true && (
-          <div className="home-header-banner">
+          <div id="#home" className="home-header-banner">
             <div className="content-up">
               <div className="title2">
                 <Typical

@@ -21,6 +21,16 @@ class BarberSchedule extends Component {
   async componentDidMount() {
     let { language } = this.props;
     let allDays = this.getArrDays(language);
+    if (this.props.barberIdFromParent) {
+      let res = await getScheduleBarberByDate(
+        this.props.barberIdFromParent,
+        allDays[0].value
+      );
+      this.setState({
+        allAvailableTime: res.data ? res.data : [],
+        allDays: allDays,
+      });
+    }
     this.setState({
       allDays: allDays,
     });
@@ -88,7 +98,7 @@ class BarberSchedule extends Component {
           allAvailableTime: res.data ? res.data : [],
         });
       }
-      console.log("check res schedule from react", res);
+      // console.log("check res schedule from react", res);
     }
   };
   handClickScheduleTime = (time) => {
@@ -96,7 +106,7 @@ class BarberSchedule extends Component {
       isOpenModalBooking: true,
       dataScheduleTimeModal: time,
     });
-    console.log(time);
+    // console.log(time);
   };
   closeBookingModal = () => {
     this.setState({

@@ -1,0 +1,27 @@
+.manage-home-container {
+  height: 100vh;
+  .title-home {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .img-home {
+    img {
+      width: 50%;
+    }
+  }
+}
+@media screen and (max-width: 40rem) {
+  .manage-home-container {
+    height: 100vh;
+    .title-home {
+      text-align: center;
+      font-size: 18px;
+    }
+    .img-home {
+      img {
+        width: 90%;
+        margin-top: -15rem;
+      }
+    }
+  }
+}

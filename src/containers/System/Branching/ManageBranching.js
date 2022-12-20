@@ -1,50 +1,49 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
-import "./ManageService.scss";
+import "./ManageBranching.scss";
 import MarkdownIt from "markdown-it";
 import MdEditor from "react-markdown-editor-lite";
 import "react-markdown-editor-lite/lib/index.css";
-import { createNewServiceBarber } from "../../../services/userService";
+import { createNewBranchingWorking } from "../../../services/userService";
 import Lightbox from "react-image-lightbox";
 import { CommonUtils } from "../../../utils";
 import { toast } from "react-toastify";
-import ModalUser from "../ModalUser";
-import { emitter } from "../../../utils/emitter";
 import {
-  getAllServiceBarber,
-  deleteServiceBarber,
+  getAllBranching,
+  deleteBranching,
 } from "../../../services/userService";
-import ModalEditService from "./ModalEditService";
+import ModalEditBranching from "./ModalEditBranching";
 const mdParser = new MarkdownIt(/* Markdown-it options */);
-class ManageService extends Component {
+class ManageBranching extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      arrService: [],
-      serviceEdit: {},
+      arrBranching: [],
+      branchingEdit: {},
       previewImgURL: "",
       imageBase64: "",
       isOpen: false,
       isOpenModalEditUser: false,
       name: "",
+      address: "",
       descriptionHTML: "",
       descriptionMarkDown: "",
     };
   }
   async componentDidMount() {
-    let response = await getAllServiceBarber();
+    let response = await getAllBranching();
     if (response && response.errCode === 0) {
       this.setState({
-        arrService: response.data,
+        arrBranching: response.data,
       });
     }
   }
   async componentDidUpdate(prevProps, prevState, snapshot) {
-    if (this.state.arrService !== prevState.arrService) {
-      let response = await getAllServiceBarber();
+    if (this.state.arrBranching !== prevState.arrBranching) {
+      let response = await getAllBranching();
       this.setState({
-        arrService: response.data,
+        arrBranching: response.data,
       });
     }
   }
@@ -85,12 +84,13 @@ class ManageService extends Component {
       descriptionMarkDown: text,
     });
   };
-  handleNewService = async () => {
-    let res = await createNewServiceBarber(this.state);
+  handleNewBranching = async () => {
+    let res = await createNewBranchingWorking(this.state);
     if (res && res.errCode === 0) {
       toast.success("Thêm mới thành công!");
       this.setState({
         name: "",
+        address: "",
         descriptionHTML: "",
         descriptionMarkDown: "",
         previewImgURL: "",
@@ -100,16 +100,16 @@ class ManageService extends Component {
       toast.error("Xin đừng để trống!");
     }
   };
-  handleEditService = async (service) => {
+  handleEditBranching = async (branching) => {
     this.setState({
       isOpenModalEditUser: true,
-      serviceEdit: service,
+      branchingEdit: branching,
     });
   };
 
-  handleDeleteService = async (service) => {
+  handleDeleteBranching = async (branching) => {
     try {
-      await deleteServiceBarber(service.id);
+      await deleteBranching(branching.id);
       toast.success("Xóa thành công!");
     } catch (error) {
       console.log(error);
@@ -117,20 +117,20 @@ class ManageService extends Component {
     }
   };
   render() {
-    let { arrService } = this.state;
+    let { arrBranching } = this.state;
     return (
       <div className="manage-service-container">
         {this.state.isOpenModalEditUser && (
-          <ModalEditService
+          <ModalEditBranching
             isOpen={this.state.isOpenModalEditUser}
             toggleFromParent={this.toggleUserEDitModal}
-            currentService={this.state.serviceEdit}
+            currentService={this.state.branchingEdit}
           />
         )}
-        <div className="ms-title">Quản lí các dịch vụ</div>
+        <div className="ms-title">Quản lí các chi nhánh</div>
         <div className="add-new-service row">
           <div className="col-6 form-group">
-            <label>Tên dịch vụ</label>
+            <label>Tên chi nhánh</label>
             <input
               type="text"
               className="form-control"
@@ -138,6 +138,16 @@ class ManageService extends Component {
               onChange={(event) => this.handleOnChangeInput(event, "name")}
             />
           </div>
+          <div className="col-6 form-group">
+            <label>Địa chỉ chi nhánh</label>
+            <input
+              type="text"
+              className="form-control"
+              value={this.state.address}
+              onChange={(event) => this.handleOnChangeInput(event, "address")}
+            />
+          </div>
+
           <div className="col-6 form-group">
             <div className="preview-img-service">
               <input
@@ -174,7 +184,7 @@ class ManageService extends Component {
         <div className="col-12">
           <button
             className="btn btn-primary mt-2"
-            onClick={() => this.handleNewService()}
+            onClick={() => this.handleNewBranching()}
           >
             Save
           </button>
@@ -184,18 +194,20 @@ class ManageService extends Component {
             <thead className="table-dark">
               <tr>
                 <th>Mã</th>
-                <th>Tên dịch vụ</th>
+                <th>Tên chi nhánh</th>
+                <th>Địa chỉ</th>
                 <th>Hình ảnh</th>
                 <th>Tiện ích</th>
               </tr>
             </thead>
             <tbody>
-              {arrService &&
-                arrService.map((item, index) => {
+              {arrBranching &&
+                arrBranching.map((item, index) => {
                   return (
                     <tr key={index}>
                       <td>{item.id}</td>
                       <td>{item.name}</td>
+                      <td>{item.address}</td>
                       <td className="img-service-td">
                         <img
                           className="img-service"
@@ -205,13 +217,13 @@ class ManageService extends Component {
                       </td>
                       <td>
                         <button
-                          onClick={() => this.handleEditService(item)}
+                          onClick={() => this.handleEditBranching(item)}
                           className="btn btn-warning"
                         >
                           <i className="fa-solid fa-pen-to-square"></i>
                         </button>
                         <button
-                          onClick={() => this.handleDeleteService(item)}
+                          onClick={() => this.handleDeleteBranching(item)}
                           className="btn btn-danger mx-3"
                         >
                           <i className="fa-sharp fa-solid fa-trash"></i>
@@ -235,4 +247,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageService);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageBranching);

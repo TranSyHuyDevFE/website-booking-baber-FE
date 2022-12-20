@@ -1,0 +1,26 @@
+.preview-img-modal-service {
+  .preview-image {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    background: center;
+    height: 200px;
+  }
+  .title-img {
+    margin: 10px;
+  }
+  .label-upload {
+    margin: 10px;
+    padding: 5px;
+    background: rgba(127, 255, 212, 0.822);
+
+    cursor: pointer;
+    i {
+      margin: 10px;
+    }
+    &:hover {
+      background: rgb(238, 241, 38);
+      transition: 1s;
+    }
+  }
+}

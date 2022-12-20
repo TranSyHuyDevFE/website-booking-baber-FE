@@ -7,6 +7,8 @@ import ManageBarber from "../containers/System/Admin/ManageBarber";
 import Header from "../containers/Header/Header";
 import ManageServiceBarber from "../containers/System/Service_Shop/ManageServiceBarber";
 import "./System.scss";
+import ManageBranching from "../containers/System/Branching/ManageBranching";
+import HomeManage from "../containers/System/Admin/HomeManage";
 class System extends Component {
   render() {
     const { systemMenuPath, isLoggedIn } = this.props;
@@ -19,9 +21,14 @@ class System extends Component {
               <Route path="/system/user-manage" component={UserManage} />
               <Route path="/system/user-redux" component={UserRedux} />
               <Route path="/system/manage-barber" component={ManageBarber} />
+              <Route path="/system/home-manage" component={HomeManage} />
               <Route
                 path="/system/manage-service"
                 component={ManageServiceBarber}
+              />
+              <Route
+                path="/system/manage-branching"
+                component={ManageBranching}
               />
               <Route
                 component={() => {

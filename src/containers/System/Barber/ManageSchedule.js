@@ -80,11 +80,11 @@ class ManageSchedule extends Component {
     let { rangeTime, selectedBarber, currentDate } = this.state;
     let result = [];
     if (!currentDate) {
-      toast.error("Invalid date!");
+      toast.error("Lỗi ngày hiển thị!");
       return;
     }
     if (selectedBarber && _.isEmpty(selectedBarber)) {
-      toast.error("Invalid selected barber!");
+      toast.error("Xin hãy chọn Barber!");
       return;
     }
     // let formatedDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
@@ -100,7 +100,7 @@ class ManageSchedule extends Component {
           result.push(object);
         });
       } else {
-        toast.error("Invalid selected time!");
+        toast.error("Xin hãy chọn thời gian!");
         return;
       }
     }
@@ -110,9 +110,9 @@ class ManageSchedule extends Component {
       formatedDate: formatedDate,
     });
     if (res && res.errCode === 0) {
-      toast.success("Save Succeed!");
+      toast.success("Lưu thành công!");
     } else {
-      toast.error("Invalid selected time!");
+      toast.error("Lưu không thành công!");
     }
   };
   render() {

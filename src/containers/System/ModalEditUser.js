@@ -96,7 +96,6 @@ class ModalEditUser extends Component {
                           this.handleOnChangeInput(event, "email");
                         }}
                         value={this.state.email}
-                        disabled
                       />
                     </div>
                     <div className="form-group col-md-12">
@@ -108,7 +107,6 @@ class ModalEditUser extends Component {
                           this.handleOnChangeInput(event, "password");
                         }}
                         value={this.state.password}
-                        disabled
                       />
                     </div>
                   </div>
