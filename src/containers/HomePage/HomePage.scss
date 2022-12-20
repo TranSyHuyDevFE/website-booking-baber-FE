@@ -1,16 +1,9 @@
 .card {
   border: 1px solid white;
-  background-image: linear-gradient(
-    rgb(11, 11, 11),
-    rgb(232 231 209 / 85%),
-    rgb(11, 11, 11)
-  );
+  background-image: rgba(0, 0, 0, 0.551);
   &:hover {
-    background-image: linear-gradient(
-      rgb(199, 222, 31),
-      rgba(72, 69, 8, 0.85),
-      rgb(11, 11, 11)
-    );
+    background-image: rgba(0, 0, 0, 0.22);
+
     border: 2px solid yellow;
     transition: 0.5s;
   }
@@ -93,11 +86,7 @@ hr {
     background-size: cover;
   }
   &.section-branching {
-    background-image: linear-gradient(
-      rgb(11 11 11),
-      rgba(101, 99, 99, 0.853),
-      rgb(11 11 11)
-    );
+    background-image: rgba(0, 0, 0, 0.472);
     hr {
       color: white;
     }
@@ -130,11 +119,7 @@ hr {
     }
   }
   &.section-service {
-    background-image: linear-gradient(
-      rgb(11, 11, 11),
-      rgb(255 255 255 / 85%),
-      rgb(240 202 145)
-    );
+    background-image: rgba(0, 0, 0, 0.492);
     hr {
       color: white;
     }
@@ -147,11 +132,7 @@ hr {
     }
     .section-body {
       .card {
-        background-image: linear-gradient(
-          rgb(11, 11, 11),
-          rgb(255 255 255 / 85%),
-          rgb(240 202 145)
-        );
+        background-color: rgba(0, 0, 0, 0.542);
         color: rgb(59, 13, 13);
         border: none;
         width: 80% !important;
@@ -206,11 +187,7 @@ hr {
       }
     }
     &.section-branching {
-      background-image: linear-gradient(
-        rgb(11 11 11),
-        rgba(101, 99, 99, 0.853),
-        rgb(11 11 11)
-      );
+      background-color: rgba(0, 0, 0, 0.542);
       hr {
         color: white;
       }
@@ -251,11 +228,7 @@ hr {
       }
     }
     &.section-service {
-      background-image: linear-gradient(
-        rgb(11, 11, 11),
-        rgb(255 255 255 / 85%),
-        rgb(240 202 145)
-      );
+      background-color: rgba(0, 0, 0, 0.542);
       hr {
         color: white;
       }
@@ -316,11 +289,8 @@ hr {
         border: none;
         outline: none;
         display: block;
-        background-image: linear-gradient(
-          rgb(240 238 238),
-          rgba(101, 99, 99, 0.853),
-          rgb(73, 71, 71)
-        );
+
+        background-color: rgba(0, 0, 0, 0.542);
         transition: 2s;
         border-radius: 10px;
         &:hover {
@@ -332,21 +302,7 @@ hr {
     }
   }
 }
-.about_title h2 {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  font-size: 18px;
-  margin-bottom: 12px;
-  background: linear-gradient(
-    120deg,
-    #1c99fe 13.69%,
-    #7644ff 49.19%,
-    #fd4766 69.69%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
+
 .about_title p {
   font-size: 18px;
   line-height: 30px;
@@ -449,11 +405,8 @@ hr {
           border: none;
           outline: none;
           display: block;
-          background-image: linear-gradient(
-            rgb(240 238 238),
-            rgba(101, 99, 99, 0.853),
-            rgb(73, 71, 71)
-          );
+
+          background-color: rgba(0, 0, 0, 0.338);
           font-size: 10px;
           transition: 2s;
           border-radius: 8px;
